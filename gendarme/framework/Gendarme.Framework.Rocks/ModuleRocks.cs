@@ -92,7 +92,7 @@ namespace Gendarme.Framework.Rocks {
 			
 			// if we could not load Mono's symbols then we try, if not running on Mono,
 			// to load MS symbols (PDB files)
-			if ((reader_type == null) && !RunningOnMono) {
+			if (reader_type == null) {
 				// assume we're running on MS.NET
 				symbol_name = Path.ChangeExtension (image_name, ".pdb");
 				if (File.Exists (symbol_name)) {
